@@ -83,12 +83,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-hr {
-  height: 2px;
-  width: 100%;
-  margin: 0; /* Remove margin */
-  color: #495057;
-}
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -586,6 +580,22 @@ section,
   font-size: 24px;
 }
 
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+  }
+  section.resume-section .resume-item .resume-date {
+    min-width: 18rem;
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
 .social-icons a {
   display: inline-block;
   height: 3.5rem;
@@ -608,6 +618,10 @@ section,
   background-color: #149ddd;
 }
 
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+
 .about .content ul {
   list-style: none;
   padding: 0;
@@ -619,6 +633,10 @@ section,
     font-size: 16px;
     margin-bottom: 20px;
   }
+}
+
+.about .surname {  
+  color: #149ddd;
 }
 
 .about .content ul li {
@@ -637,11 +655,6 @@ section,
   color: var(--accent-color);
   line-height: 0;
 }
-
-/* .line {
-  border-bottom: 1px solid #888;
-  all: unset;
-} */
 
 /*--------------------------------------------------------------
 # Skills Section
