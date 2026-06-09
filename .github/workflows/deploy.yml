@@ -31,6 +31,9 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --verbose --no-progress --accept 200,403 './**/*.html'
+          args: >-
+            --verbose --no-progress --accept 200,403
+            --exclude '^https://fonts\.googleapis\.com/$'
+            --exclude '^https://fonts\.gstatic\.com/$'
+            './**/*.html'
           fail: true
-
