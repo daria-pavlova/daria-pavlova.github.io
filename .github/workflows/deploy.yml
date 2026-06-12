@@ -29,7 +29,7 @@ jobs:
           css: false
           
       - name: Check links
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2.0.2
         with:
           args: --verbose --no-progress --accept 200,403 './**/*.html'
           fail: true
