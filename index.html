@@ -68,7 +68,7 @@
         <li><a href="#education"><i class="bi bi-book navicon"></i> Education</a></li>
         <li><a href="#portfolio"><i class="fab fa-github navicon"></i> Projects</a></li>
         <li><a href="#certificates"><i class="bi bi-card-checklist navicon"></i> Certificates</a></li>
-        <!-- <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li> -->
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -115,6 +115,46 @@
       </div><!-- End Section Title -->
       <hr>
     </section><!-- /About Section -->
+
+    <!-- Pipeline Section -->
+    <section id="pipeline" class="pipeline section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>How I Ship Code</h2>
+      </div>
+      <div class="container">
+        <div class="pipeline-track">
+          <div class="pipeline-line">
+            <div class="pipeline-progress"></div>
+          </div>
+          <div class="pipeline-stage">
+            <div class="pipeline-icon"><i class="bi bi-code-slash"></i></div>
+            <h4>Code</h4>
+            <p>Commit & review</p>
+          </div>
+          <div class="pipeline-stage">
+            <div class="pipeline-icon"><i class="bi bi-gear"></i></div>
+            <h4>Build</h4>
+            <p>CI compiles & packages</p>
+          </div>
+          <div class="pipeline-stage">
+            <div class="pipeline-icon"><i class="bi bi-check2-circle"></i></div>
+            <h4>Test</h4>
+            <p>Automated test suites</p>
+          </div>
+          <div class="pipeline-stage">
+            <div class="pipeline-icon"><i class="bi bi-cloud-upload"></i></div>
+            <h4>Deploy</h4>
+            <p>GitOps rollout</p>
+          </div>
+          <div class="pipeline-stage">
+            <div class="pipeline-icon"><i class="bi bi-graph-up"></i></div>
+            <h4>Monitor</h4>
+            <p>Observe & alert</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Pipeline Section -->
+    <hr>
 
     <!-- Skills Section -->
     <section id="skills" class="about section">
@@ -412,6 +452,40 @@
         </div>
       </div>
     </section><!-- /Certificates Section -->
+    <hr>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Get in Touch</h2>
+        <p>Have a question or want to work together? Send a message and I'll get back to you.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <form action="https://formspree.io/f/xljjzwgz" method="POST" class="feedback-form">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-12">
+              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            </div>
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="loading">Sending...</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+              <button type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section><!-- /Contact Section -->
   </main>
 
   <!-- Scroll Top -->

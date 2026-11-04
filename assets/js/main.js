@@ -226,4 +226,72 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * CI/CD pipeline scroll animation
+   */
+  const pipelineSection = document.querySelector('#pipeline');
+  if (pipelineSection) {
+    const pipelineProgress = pipelineSection.querySelector('.pipeline-progress');
+    const pipelineStages = pipelineSection.querySelectorAll('.pipeline-stage');
+
+    const playPipeline = () => {
+      pipelineProgress.classList.add('active');
+      pipelineStages.forEach((stage, i) => {
+        setTimeout(() => stage.classList.add('lit'), i * 400);
+      });
+    };
+
+    const resetPipeline = () => {
+      pipelineProgress.classList.remove('active');
+      pipelineStages.forEach(stage => stage.classList.remove('lit'));
+    };
+
+    const pipelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.isIntersecting ? playPipeline() : resetPipeline();
+      });
+    }, { threshold: 0.4 });
+
+    pipelineObserver.observe(pipelineSection);
+  }
+
+  /**
+   * Feedback form submission (Formspree)
+   */
+  document.querySelectorAll('.feedback-form').forEach((form) => {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const loadingEl = form.querySelector('.loading');
+      const errorEl = form.querySelector('.error-message');
+      const sentEl = form.querySelector('.sent-message');
+
+      loadingEl.classList.add('d-block');
+      errorEl.classList.remove('d-block');
+      sentEl.classList.remove('d-block');
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          loadingEl.classList.remove('d-block');
+          if (response.ok) {
+            sentEl.classList.add('d-block');
+            form.reset();
+          } else {
+            return response.json().then(data => {
+              throw new Error((data.errors || []).map(e => e.message).join(', ') || 'Form submission failed.');
+            });
+          }
+        })
+        .catch(error => {
+          loadingEl.classList.remove('d-block');
+          errorEl.textContent = error.message;
+          errorEl.classList.add('d-block');
+        });
+    });
+  });
+
 })();

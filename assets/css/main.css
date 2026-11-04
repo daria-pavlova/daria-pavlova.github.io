@@ -1422,3 +1422,221 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# CI/CD Pipeline Scroll Animation
+--------------------------------------------------------------*/
+.pipeline {
+  --background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+}
+
+.pipeline-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 0 20px;
+}
+
+.pipeline-line {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: color-mix(in srgb, var(--default-color), transparent 88%);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.pipeline-progress {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--accent-color);
+  transition: width 2s ease;
+}
+
+.pipeline-progress.active {
+  width: 100%;
+}
+
+.pipeline-stage {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 18%;
+}
+
+.pipeline-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: var(--background-color);
+  border: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+}
+
+.pipeline-stage.lit .pipeline-icon {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.pipeline-stage h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.pipeline-stage p {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .pipeline-track {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding-left: 35px;
+  }
+
+  .pipeline-line {
+    top: 0;
+    bottom: 0;
+    left: 35px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+
+  .pipeline-progress {
+    width: 100%;
+    height: 0%;
+    transition: height 2s ease;
+  }
+
+  .pipeline-progress.active {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pipeline-stage {
+    width: 100%;
+    flex-direction: row;
+    text-align: left;
+    margin-left: -35px;
+  }
+
+  .pipeline-stage .pipeline-icon {
+    margin-bottom: 0;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Feedback Form
+--------------------------------------------------------------*/
+.feedback-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 0px 0px 20px color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+@media (max-width: 575px) {
+  .feedback-form {
+    padding: 20px;
+  }
+}
+
+.feedback-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.feedback-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.feedback-form .loading {
+  display: none;
+  background: var(--background-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.feedback-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--background-color);
+  animation: animate-loading 1s linear infinite;
+}
+
+.feedback-form input[type=text],
+.feedback-form input[type=email],
+.feedback-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 4px;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.feedback-form input[type=text]:focus,
+.feedback-form input[type=email]:focus,
+.feedback-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.feedback-form input[type=text]::placeholder,
+.feedback-form input[type=email]::placeholder,
+.feedback-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.feedback-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.feedback-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
