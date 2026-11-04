@@ -227,25 +227,6 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
   /**
-   * DevOps infinity loop icon follows scroll position through its section
-   */
-  const loopSection = document.querySelector('#devops-loop');
-  if (loopSection) {
-    const loopIcon = loopSection.querySelector('.loop-icon');
-
-    function updateLoopIcon() {
-      const rect = loopSection.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const range = vh + rect.height;
-      const progress = Math.min(1, Math.max(0, (vh - rect.top) / range));
-      loopIcon.style.offsetDistance = (progress * 100) + '%';
-    }
-
-    window.addEventListener('load', updateLoopIcon);
-    document.addEventListener('scroll', updateLoopIcon);
-  }
-
-  /**
    * Feedback form submission (Formspree)
    */
   document.querySelectorAll('.feedback-form').forEach((form) => {
