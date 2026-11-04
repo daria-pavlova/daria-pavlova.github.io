@@ -227,32 +227,22 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
   /**
-   * CI/CD pipeline scroll animation
+   * DevOps infinity loop icon follows scroll position through its section
    */
-  const pipelineSection = document.querySelector('#pipeline');
-  if (pipelineSection) {
-    const pipelineProgress = pipelineSection.querySelector('.pipeline-progress');
-    const pipelineStages = pipelineSection.querySelectorAll('.pipeline-stage');
+  const loopSection = document.querySelector('#devops-loop');
+  if (loopSection) {
+    const loopIcon = loopSection.querySelector('.loop-icon');
 
-    const playPipeline = () => {
-      pipelineProgress.classList.add('active');
-      pipelineStages.forEach((stage, i) => {
-        setTimeout(() => stage.classList.add('lit'), i * 400);
-      });
-    };
+    function updateLoopIcon() {
+      const rect = loopSection.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const range = vh + rect.height;
+      const progress = Math.min(1, Math.max(0, (vh - rect.top) / range));
+      loopIcon.style.offsetDistance = (progress * 100) + '%';
+    }
 
-    const resetPipeline = () => {
-      pipelineProgress.classList.remove('active');
-      pipelineStages.forEach(stage => stage.classList.remove('lit'));
-    };
-
-    const pipelineObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        entry.isIntersecting ? playPipeline() : resetPipeline();
-      });
-    }, { threshold: 0.4 });
-
-    pipelineObserver.observe(pipelineSection);
+    window.addEventListener('load', updateLoopIcon);
+    document.addEventListener('scroll', updateLoopIcon);
   }
 
   /**
