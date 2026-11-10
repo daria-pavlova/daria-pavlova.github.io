@@ -512,28 +512,10 @@
       <div class="container section-title" data-aos="fade-up">
         <h2 data-cmd="kubectl get certificates">Certificates</h2>
         <div class="cert-grid">
-          <a class="cert-card" href="https://www.credly.com/badges/ec6ae83f-587a-4804-ae19-46d1581bfb8f" target="_blank" rel="noopener">
-            <img src="assets/img/certs/kcsa.png" alt="KCSA badge" width="110" height="110" loading="lazy">
-            <h3>KCSA</h3>
-            <p>Kubernetes and Cloud Native Security Associate</p>
-            <span>The Linux Foundation</span>
-          </a>
-          <a class="cert-card" href="https://www.credly.com/badges/6a1d3651-499f-40f9-9d53-5f8fe2763588" target="_blank" rel="noopener">
-            <img src="assets/img/certs/kcna.png" alt="KCNA badge" width="110" height="110" loading="lazy">
-            <h3>KCNA</h3>
-            <p>Kubernetes and Cloud Native Associate</p>
-            <span>The Linux Foundation</span>
-          </a>
-          <a class="cert-card" href="https://www.credly.com/badges/fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" target="_blank" rel="noopener">
-            <img src="assets/img/certs/mta.png" alt="MTA badge" width="110" height="110" loading="lazy">
-            <h3>MTA</h3>
-            <p>Database Fundamentals, Certified 2020</p>
-            <span>Microsoft</span>
-          </a>
-          <a class="cert-card" href="https://www.credly.com/badges/1146137f-45c3-4a36-b26b-7938b263770c" target="_blank" rel="noopener">
-            <img src="assets/img/certs/ckad.png" alt="CKAD badge" width="110" height="110" loading="lazy">
-            <h3>CKAD</h3>
-            <p>Certified Kubernetes Application Developer</p>
+          <a class="cert-card cert-card-top" href="https://www.credly.com/badges/360a79f1-45a9-4f99-8cc3-114e88eefd75" target="_blank" rel="noopener">
+            <img src="assets/img/certs/kubestronaut.png" alt="Kubestronaut badge" width="110" height="110" loading="lazy">
+            <h3>Kubestronaut</h3>
+            <p>All five CNCF Kubernetes certifications held together</p>
             <span>The Linux Foundation</span>
           </a>
           <a class="cert-card" href="https://www.credly.com/badges/c3be5dd6-d35a-4a49-b223-f90481fa3a08" target="_blank" rel="noopener">
@@ -542,12 +524,78 @@
             <p>Certified Kubernetes Administrator</p>
             <span>The Linux Foundation</span>
           </a>
+          <a class="cert-card" href="https://www.credly.com/badges/1146137f-45c3-4a36-b26b-7938b263770c" target="_blank" rel="noopener">
+            <img src="assets/img/certs/ckad.png" alt="CKAD badge" width="110" height="110" loading="lazy">
+            <h3>CKAD</h3>
+            <p>Certified Kubernetes Application Developer</p>
+            <span>The Linux Foundation</span>
+          </a>
           <a class="cert-card" href="https://www.credly.com/badges/df18a3f4-c8bd-4498-81a4-767437bf280f" target="_blank" rel="noopener">
             <img src="assets/img/certs/cks.png" alt="CKS badge" width="110" height="110" loading="lazy">
             <h3>CKS</h3>
             <p>Certified Kubernetes Security Specialist</p>
             <span>The Linux Foundation</span>
           </a>
+          <a class="cert-card" href="https://www.credly.com/badges/6a1d3651-499f-40f9-9d53-5f8fe2763588" target="_blank" rel="noopener">
+            <img src="assets/img/certs/kcna.png" alt="KCNA badge" width="110" height="110" loading="lazy">
+            <h3>KCNA</h3>
+            <p>Kubernetes and Cloud Native Associate</p>
+            <span>The Linux Foundation</span>
+          </a>
+          <a class="cert-card" href="https://www.credly.com/badges/ec6ae83f-587a-4804-ae19-46d1581bfb8f" target="_blank" rel="noopener">
+            <img src="assets/img/certs/kcsa.png" alt="KCSA badge" width="110" height="110" loading="lazy">
+            <h3>KCSA</h3>
+            <p>Kubernetes and Cloud Native Security Associate</p>
+            <span>The Linux Foundation</span>
+          </a>
+          <a class="cert-card" href="https://www.credly.com/badges/fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" target="_blank" rel="noopener">
+            <img src="assets/img/certs/mta.png" alt="MTA badge" width="110" height="110" loading="lazy">
+            <h3>MTA</h3>
+            <p>Database Fundamentals, Certified 2020</p>
+            <span>Microsoft</span>
+          </a>
+        </div>
+
+        <div class="cert-graph" data-aos="fade-up">
+          <h3 class="cert-graph-title">Certification path</h3>
+          <p class="cert-graph-intro">How the credentials build on each other, by technology and level.</p>
+          <div class="cert-graph-scroll" tabindex="0" role="region" aria-label="Certification dependency graph, scrollable">
+          <svg class="cert-graph-svg" viewBox="0 0 880 540" role="group" aria-labelledby="cg-title cg-desc">
+            <title id="cg-title">Certification dependency graph</title>
+            <desc id="cg-desc">Kubernetes track: KCNA leads to CKA and CKAD, CKA is required for CKS, KCSA supports CKS, and holding all five earns Kubestronaut. MTA is an independent database certification.</desc>
+            <defs>
+              <marker id="cg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="g-arrow"/></marker>
+            </defs>
+
+            <rect class="g-group" x="10" y="30" width="650" height="370" rx="16"/>
+            <text class="g-label" x="28" y="56">KUBERNETES TRACK</text>
+            <text class="g-level" x="30" y="90">ASSOCIATE</text>
+            <text class="g-level" x="255" y="90">PROFESSIONAL</text>
+            <text class="g-level" x="480" y="90">SPECIALIST</text>
+            <text class="g-level" x="720" y="146">ACHIEVEMENT</text>
+
+            <rect class="g-group" x="10" y="420" width="640" height="108" rx="16"/>
+            <text class="g-label" x="28" y="444">DATABASE TRACK</text>
+            <text class="g-note" x="200" y="489">independent, no prerequisites</text>
+
+            <path class="g-edge rec" d="M180 131H253" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge rec" d="M180 131C218 131 218 236 253 236" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge req" d="M405 131C445 131 445 191 478 191" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge rec" d="M180 341C400 341 555 320 555 224" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge req" d="M660 191H718" marker-end="url(#cg-arrow)"/>
+            <text class="g-note" x="689" y="180" text-anchor="middle">all 5</text>
+
+            <a href="https://www.credly.com/badges/6a1d3651-499f-40f9-9d53-5f8fe2763588" target="_blank" rel="noopener"><g class="g-node gn-ops" transform="translate(30 100)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">KCNA</text><text class="g-sub" x="18" y="46">Cloud Native Assoc.</text></g></a><a href="https://www.credly.com/badges/ec6ae83f-587a-4804-ae19-46d1581bfb8f" target="_blank" rel="noopener"><g class="g-node gn-sec" transform="translate(30 310)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">KCSA</text><text class="g-sub" x="18" y="46">Security Associate</text></g></a><a href="https://www.credly.com/badges/c3be5dd6-d35a-4a49-b223-f90481fa3a08" target="_blank" rel="noopener"><g class="g-node gn-ops" transform="translate(255 100)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">CKA</text><text class="g-sub" x="18" y="46">Administrator</text></g></a><a href="https://www.credly.com/badges/1146137f-45c3-4a36-b26b-7938b263770c" target="_blank" rel="noopener"><g class="g-node gn-dev" transform="translate(255 205)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">CKAD</text><text class="g-sub" x="18" y="46">App Developer</text></g></a><a href="https://www.credly.com/badges/df18a3f4-c8bd-4498-81a4-767437bf280f" target="_blank" rel="noopener"><g class="g-node gn-sec" transform="translate(480 160)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">CKS</text><text class="g-sub" x="18" y="46">Security Specialist</text></g></a><a href="https://www.credly.com/badges/360a79f1-45a9-4f99-8cc3-114e88eefd75" target="_blank" rel="noopener"><g class="g-node gn-top" transform="translate(720 160)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">Kubestronaut</text><text class="g-sub" x="18" y="46">All five held</text></g></a><a href="https://www.credly.com/badges/fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" target="_blank" rel="noopener"><g class="g-node gn-db" transform="translate(30 452)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">MTA</text><text class="g-sub" x="18" y="46">DB Fundamentals</text></g></a>
+          </svg>
+          </div>
+          <ul class="cert-legend">
+            <li><span class="dot dot-ops"></span> Kubernetes operations</li>
+            <li><span class="dot dot-dev"></span> Application development</li>
+            <li><span class="dot dot-sec"></span> Security</li>
+            <li><span class="dot dot-db"></span> Databases</li>
+            <li><span class="line line-req"></span> required</li>
+            <li><span class="line line-rec"></span> recommended path</li>
+          </ul>
         </div>
       </div>
     </section><!-- /Certificates Section -->
