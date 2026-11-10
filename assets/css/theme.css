@@ -93,6 +93,23 @@
   }
 }
 
+/* On small screens the menu slides in from the right, the same side as the burger button */
+@media (max-width: 1199px) {
+  .header {
+    left: auto;
+    right: -100%;
+    width: min(300px, 86vw);
+    border-right: 0;
+    border-left: 1px solid var(--border-color);
+  }
+
+  .header.header-show {
+    left: auto;
+    right: 0;
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.35);
+  }
+}
+
 @media (min-width: 1200px) {
   /* top corner of the sidebar, so it never covers page content */
   .theme-toggle {
@@ -309,7 +326,7 @@ main hr {
   font-weight: 500;
 }
 
-.header .header-toggle {
+.header-toggle {
   border-radius: 10px;
 }
 
@@ -744,21 +761,60 @@ main hr + .section {
 /*--------------------------------------------------------------
 # Certificates
 --------------------------------------------------------------*/
-.certificates .row {
+.cert-grid {
+  max-width: 580px; /* three per row, so six badges sit as 3 + 3 */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
-  margin: 0;
 }
 
-.certificates .row > div {
-  width: auto;
-  padding: 0;
+.cert-card {
+  width: 176px;
+  max-width: calc(50% - 7px); /* two per row on phones */
+  padding: 18px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--surface-color);
+  color: var(--default-color);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
-.certificates iframe {
-  display: block;
-  border-radius: 12px;
-  border: 1px solid var(--border-color) !important;
-  background: #fff;
+.cert-card:hover {
+  color: var(--default-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow);
+}
+
+.cert-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.cert-card h3 {
+  font: 600 15px var(--mono-font);
+  color: var(--heading-color);
+  margin: 0 0 6px;
+}
+
+.cert-card p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 0 10px;
+}
+
+.cert-card span {
+  margin-top: auto;
+  font: 400 11.5px var(--mono-font);
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------

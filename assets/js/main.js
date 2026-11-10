@@ -301,6 +301,7 @@
   let pointer = null;
   let lastMove = -Infinity;
   let watching = false;
+  let touching = false;
   let watchStart = 0;
   let lockUntil = 0;
   let nextBlink = 0;
@@ -321,10 +322,11 @@
     rafId = requestAnimationFrame(frame);
     if (!onScreen) return; // sidebar is slid away on small screens until the menu is opened
 
-    const wantsToWatch = pointer && now - lastMove < LOOK_IDLE_MS && now > lockUntil;
+    // A finger on the screen is followed for as long as it is down, even while scrolling.
+    const wantsToWatch = pointer && (touching || (now - lastMove < LOOK_IDLE_MS && now > lockUntil));
     if (wantsToWatch && !watching) watchStart = now;
     watching = !!wantsToWatch;
-    if (watching && now - watchStart > LOOK_MAX_MS) {
+    if (watching && !touching && now - watchStart > LOOK_MAX_MS) {
       watching = false;
       lockUntil = now + LOOK_REST_MS;
     }
@@ -428,6 +430,25 @@
     lastMove = performance.now();
   }, { passive: true });
   document.documentElement.addEventListener('mouseleave', () => { pointer = null; });
+
+  // Touch: pointer events stop once the browser starts scrolling, so use touch events,
+  // which keep firing while the finger drags.
+  function onTouch(e) {
+    const t = e.touches[0];
+    if (!t) return;
+    pointer = { x: t.clientX, y: t.clientY };
+    lastMove = performance.now();
+    touching = true;
+  }
+  function onTouchEnd(e) {
+    if (e.touches.length) return;
+    touching = false;
+    lastMove = performance.now();
+  }
+  window.addEventListener('touchstart', onTouch, { passive: true });
+  window.addEventListener('touchmove', onTouch, { passive: true });
+  window.addEventListener('touchend', onTouchEnd, { passive: true });
+  window.addEventListener('touchcancel', onTouchEnd, { passive: true });
 
   update();
 })();
