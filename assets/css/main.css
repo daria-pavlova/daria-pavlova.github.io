@@ -110,12 +110,47 @@ hr {
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.header .profile-img img {
-  margin: 100px auto;
-  margin-bottom: 15px;
+.header .profile-img {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 100px auto 15px;
+}
+
+.header .profile-img img,
+.header .profile-img .memoji {
   display: block;
   width: 120px;
+  height: 120px;
   border-radius: 50%;
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Animated avatar that replaces the photo while the visitor scrolls */
+.header .profile-img .memoji {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(0.75) rotate(-14deg);
+  pointer-events: none;
+}
+
+.header .profile-img.is-memoji img {
+  opacity: 0;
+  transform: scale(0.75) rotate(14deg);
+}
+
+.header .profile-img.is-memoji .memoji {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .profile-img img,
+  .header .profile-img .memoji {
+    transition: opacity 0.2s linear;
+    transform: none !important;
+  }
 }
 
 .header .logo {
