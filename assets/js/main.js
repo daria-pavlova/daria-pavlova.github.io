@@ -472,6 +472,15 @@
     btn.setAttribute('aria-label', label);
     btn.title = label;
     if (themeColor) themeColor.content = light ? '#f5f7fb' : '#0a0e14';
+    // keep the uptime badge in the footer matching the theme
+    const badge = document.getElementById('uptime-badge');
+    if (badge) {
+      const want = light ? 'light' : 'dark';
+      if (!badge.src.includes('theme=' + want)) {
+        badge.src = badge.src.replace(/theme=(dark|light)/, 'theme=' + want);
+      }
+      badge.style.colorScheme = want;
+    }
   }
 
   btn.addEventListener('click', () => {
@@ -483,4 +492,12 @@
   });
 
   render();
+})();
+
+/**
+ * Footer year
+ */
+(function () {
+  const y = document.getElementById('footer-year');
+  if (y) y.textContent = new Date().getFullYear();
 })();

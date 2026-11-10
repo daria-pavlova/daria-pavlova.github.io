@@ -881,6 +881,59 @@ main hr + .section {
 }
 
 /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  --background-color: transparent;
+  background-color: transparent;
+  border-top: 1px solid var(--border-color);
+  padding: 22px 0;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+}
+
+.footer-copy {
+  margin: 0;
+  color: var(--muted-color);
+}
+
+.footer-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 500 13px var(--mono-font);
+  color: var(--default-color);
+}
+
+.footer-link i {
+  color: var(--accent-color);
+}
+
+.footer-link:hover {
+  color: var(--accent-color);
+}
+
+.footer-status iframe {
+  display: block;
+  border: 0;
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
 # Misc
 --------------------------------------------------------------*/
 .scroll-top {
