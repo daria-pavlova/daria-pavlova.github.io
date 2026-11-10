@@ -247,76 +247,88 @@
     <section id="skills" class="skills-ops section">
       <div class="container section-title" data-aos="fade-up">
         <h2 data-cmd="kubectl get skills --all-namespaces">Technical Skills</h2>
-        <ul class="tool-icons"><li><i class="fab fa-aws" title="AWS"></i></li><li><i class="fab fa-google" title="Google Cloud"></i></li><li><i class="fab fa-docker" title="Docker"></i></li><li><i class="fab fa-python" title="Python"></i></li><li><i class="fab fa-git-alt" title="Git"></i></li><li><i class="fab fa-github" title="GitHub"></i></li><li><i class="fab fa-gitlab" title="GitLab"></i></li><li><i class="fab fa-jenkins" title="Jenkins"></i></li><li><i class="fab fa-linux" title="Linux"></i></li><li><i class="fab fa-ubuntu" title="Ubuntu"></i></li><li><i class="fab fa-centos" title="CentOS"></i></li><li><i class="fab fa-windows" title="Windows Server"></i></li></ul>
+        <ul class="tool-icons"><li><button type="button" class="tool-link" data-target="skill-aws" data-chip="" aria-label="AWS: show in skills" title="AWS"><i class="fab fa-aws"></i></button></li><li><button type="button" class="tool-link" data-target="skill-gcp" data-chip="" aria-label="Google Cloud: show in skills" title="Google Cloud"><i class="fab fa-google"></i></button></li><li><button type="button" class="tool-link" data-target="skill-azure" data-chip="" aria-label="Azure: show in skills" title="Azure"><i class="si" style="--si:url('../img/tools/microsoftazure.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-cicd" data-chip="Git" aria-label="Git: show in skills" title="Git"><i class="fab fa-git-alt"></i></button></li><li><button type="button" class="tool-link" data-target="skill-cicd" data-chip="GitHub Actions" aria-label="GitHub: show in skills" title="GitHub"><i class="fab fa-github"></i></button></li><li><button type="button" class="tool-link" data-target="skill-cicd" data-chip="GitLab CI" aria-label="GitLab: show in skills" title="GitLab"><i class="fab fa-gitlab"></i></button></li><li><button type="button" class="tool-link" data-target="skill-cicd" data-chip="Jenkins" aria-label="Jenkins: show in skills" title="Jenkins"><i class="fab fa-jenkins"></i></button></li><li><button type="button" class="tool-link" data-target="skill-gitops" data-chip="Argo CD" aria-label="Argo: show in skills" title="Argo"><i class="si" style="--si:url('../img/tools/argo.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-artifacts" data-chip="JFrog Artifactory" aria-label="JFrog: show in skills" title="JFrog"><i class="si" style="--si:url('../img/tools/jfrog.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-containers" data-chip="Docker" aria-label="Docker: show in skills" title="Docker"><i class="fab fa-docker"></i></button></li><li><button type="button" class="tool-link" data-target="skill-orchestration" data-chip="Kubernetes" aria-label="Kubernetes: show in skills" title="Kubernetes"><i class="si" style="--si:url('../img/tools/kubernetes.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-orchestration" data-chip="Helm" aria-label="Helm: show in skills" title="Helm"><i class="si" style="--si:url('../img/tools/helm.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-config" data-chip="Terraform" aria-label="Terraform: show in skills" title="Terraform"><i class="si" style="--si:url('../img/tools/terraform.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-config" data-chip="Ansible" aria-label="Ansible: show in skills" title="Ansible"><i class="si" style="--si:url('../img/tools/ansible.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-config" data-chip="Puppet" aria-label="Puppet: show in skills" title="Puppet"><i class="si" style="--si:url('../img/tools/puppet.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-monitoring" data-chip="Datadog" aria-label="Datadog: show in skills" title="Datadog"><i class="si" style="--si:url('../img/tools/datadog.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-monitoring" data-chip="Prometheus" aria-label="Prometheus: show in skills" title="Prometheus"><i class="si" style="--si:url('../img/tools/prometheus.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-monitoring" data-chip="Grafana" aria-label="Grafana: show in skills" title="Grafana"><i class="si" style="--si:url('../img/tools/grafana.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-monitoring" data-chip="ELK stack" aria-label="ELK stack: show in skills" title="ELK stack"><i class="si" style="--si:url('../img/tools/elasticstack.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-scripting" data-chip="Python" aria-label="Python: show in skills" title="Python"><i class="fab fa-python"></i></button></li><li><button type="button" class="tool-link" data-target="skill-scripting" data-chip="Bash" aria-label="Bash: show in skills" title="Bash"><i class="si" style="--si:url('../img/tools/gnubash.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-platforms" data-chip="Linux" aria-label="Linux: show in skills" title="Linux"><i class="fab fa-linux"></i></button></li><li><button type="button" class="tool-link" data-target="skill-platforms" data-chip="Linux" aria-label="Red Hat: show in skills" title="Red Hat"><i class="si" style="--si:url('../img/tools/redhat.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-platforms" data-chip="Linux" aria-label="Ubuntu: show in skills" title="Ubuntu"><i class="fab fa-ubuntu"></i></button></li><li><button type="button" class="tool-link" data-target="skill-platforms" data-chip="Linux" aria-label="CentOS: show in skills" title="CentOS"><i class="fab fa-centos"></i></button></li><li><button type="button" class="tool-link" data-target="skill-platforms" data-chip="Windows Server" aria-label="Windows Server: show in skills" title="Windows Server"><i class="fab fa-windows"></i></button></li><li><button type="button" class="tool-link" data-target="skill-databases" data-chip="MySQL" aria-label="MySQL: show in skills" title="MySQL"><i class="si" style="--si:url('../img/tools/mysql.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-databases" data-chip="PostgreSQL" aria-label="PostgreSQL: show in skills" title="PostgreSQL"><i class="si" style="--si:url('../img/tools/postgresql.svg')"></i></button></li><li><button type="button" class="tool-link" data-target="skill-databases" data-chip="Redis" aria-label="Redis: show in skills" title="Redis"><i class="si" style="--si:url('../img/tools/redis.svg')"></i></button></li></ul>
         <div class="row g-3">
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-aws">
               <h3><i class="bi bi-cloud"></i> AWS</h3>
               <ul class="chips"><li>EC2</li><li>ELB</li><li>Route53</li><li>S3</li><li>SNS</li><li>RDS</li><li>IAM</li><li>VPC</li><li>EKS</li><li>Kong</li><li>Auto Scaling</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-gcp">
               <h3><i class="bi bi-cloud"></i> GCP</h3>
               <ul class="chips"><li>GKE</li><li>Cloud IAM</li><li>Cloud Monitoring</li><li>Cloud Shell</li><li>Compute Engine</li><li>Cloud Storage</li><li>Cloud Load Balancer</li><li>Cloud SQL</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-azure">
               <h3><i class="bi bi-cloud"></i> Azure</h3>
               <ul class="chips"><li>VMs</li><li>Disk Storage</li><li>VM Backup</li><li>Virtual Networks</li><li>Load Balancers</li><li>Monitor</li><li>Blobs</li><li>Storage Accounts</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-cicd">
               <h3><i class="bi bi-infinity"></i> CI/CD</h3>
-              <ul class="chips"><li>Jenkins</li><li>GitLab CI</li><li>GitHub Actions</li></ul>
+              <ul class="chips"><li>Git</li><li>Jenkins</li><li>GitLab CI</li><li>GitHub Actions</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-gitops">
+              <h3><i class="bi bi-arrow-repeat"></i> GitOps &amp; delivery</h3>
+              <ul class="chips"><li>Argo CD</li><li>Argo Rollouts</li></ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-xxl-4">
+            <div class="skill-card h-100" id="skill-artifacts">
+              <h3><i class="bi bi-archive"></i> Artifacts &amp; scanning</h3>
+              <ul class="chips"><li>JFrog Artifactory</li><li>JFrog Xray</li><li>Wiz</li><li>SBOM</li></ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-xxl-4">
+            <div class="skill-card h-100" id="skill-containers">
               <h3><i class="bi bi-box-seam"></i> Containers</h3>
               <ul class="chips"><li>Docker</li><li>Docker-compose</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-orchestration">
               <h3><i class="bi bi-diagram-3"></i> Orchestration</h3>
               <ul class="chips"><li>Kubernetes</li><li>minikube</li><li>Helm</li><li>K9s</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-config">
               <h3><i class="bi bi-file-earmark-code"></i> Configuration management</h3>
               <ul class="chips"><li>Terraform</li><li>Ansible</li><li>Puppet</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-monitoring">
               <h3><i class="bi bi-activity"></i> Monitoring &amp; logging</h3>
-              <ul class="chips"><li>ELK stack</li><li>CloudWatch</li><li>Google Cloud Operations</li><li>Prometheus</li><li>Grafana</li></ul>
+              <ul class="chips"><li>ELK stack</li><li>CloudWatch</li><li>Google Cloud Operations</li><li>Prometheus</li><li>Grafana</li><li>Datadog</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-scripting">
               <h3><i class="bi bi-terminal"></i> Scripting</h3>
               <ul class="chips"><li>Bash</li><li>Python</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-platforms">
               <h3><i class="bi bi-hdd-stack"></i> Platforms</h3>
               <ul class="chips"><li>Linux (Red Hat, Ubuntu, CentOS)</li><li>Windows Server</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-databases">
               <h3><i class="bi bi-database"></i> Databases</h3>
               <ul class="chips"><li>MySQL</li><li>Redis</li><li>PostgreSQL</li><li>Microsoft SQL Server</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
-            <div class="skill-card h-100">
+            <div class="skill-card h-100" id="skill-networking">
               <h3><i class="bi bi-hdd-network"></i> Networking</h3>
               <ul class="chips"><li>HTTP/HTTPS</li><li>FTP</li><li>NFS</li><li>SMB</li><li>SNMP</li><li>SSH</li><li>DNS</li><li>TCP/IP</li><li>DHCP</li></ul>
             </div>
@@ -511,92 +523,86 @@
        
       <div class="container section-title" data-aos="fade-up">
         <h2 data-cmd="kubectl get certificates">Certificates</h2>
+        <!-- Themed cards; selecting one opens the official live Credly embed in a dialog -->
         <div class="cert-grid">
-          <a class="cert-card cert-card-top" href="https://www.credly.com/badges/360a79f1-45a9-4f99-8cc3-114e88eefd75" target="_blank" rel="noopener">
+          <a class="cert-card cert-card-top" href="https://www.credly.com/badges/360a79f1-45a9-4f99-8cc3-114e88eefd75" data-badge-id="360a79f1-45a9-4f99-8cc3-114e88eefd75" target="_blank" rel="noopener">
             <img src="assets/img/certs/kubestronaut.png" alt="Kubestronaut badge" width="110" height="110" loading="lazy">
             <h3>Kubestronaut</h3>
             <p>All five CNCF Kubernetes certifications held together</p>
             <span>The Linux Foundation</span>
+            <em class="cert-verify"><i class="bi bi-patch-check"></i> verify</em>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/c3be5dd6-d35a-4a49-b223-f90481fa3a08" target="_blank" rel="noopener">
+          <a class="cert-card" href="https://www.credly.com/badges/c3be5dd6-d35a-4a49-b223-f90481fa3a08" data-badge-id="c3be5dd6-d35a-4a49-b223-f90481fa3a08" target="_blank" rel="noopener">
             <img src="assets/img/certs/cka.png" alt="CKA badge" width="110" height="110" loading="lazy">
             <h3>CKA</h3>
             <p>Certified Kubernetes Administrator</p>
             <span>The Linux Foundation</span>
+            <em class="cert-verify"><i class="bi bi-patch-check"></i> verify</em>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/1146137f-45c3-4a36-b26b-7938b263770c" target="_blank" rel="noopener">
+          <a class="cert-card" href="https://www.credly.com/badges/1146137f-45c3-4a36-b26b-7938b263770c" data-badge-id="1146137f-45c3-4a36-b26b-7938b263770c" target="_blank" rel="noopener">
             <img src="assets/img/certs/ckad.png" alt="CKAD badge" width="110" height="110" loading="lazy">
             <h3>CKAD</h3>
             <p>Certified Kubernetes Application Developer</p>
             <span>The Linux Foundation</span>
+            <em class="cert-verify"><i class="bi bi-patch-check"></i> verify</em>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/df18a3f4-c8bd-4498-81a4-767437bf280f" target="_blank" rel="noopener">
+          <a class="cert-card" href="https://www.credly.com/badges/df18a3f4-c8bd-4498-81a4-767437bf280f" data-badge-id="df18a3f4-c8bd-4498-81a4-767437bf280f" target="_blank" rel="noopener">
             <img src="assets/img/certs/cks.png" alt="CKS badge" width="110" height="110" loading="lazy">
             <h3>CKS</h3>
             <p>Certified Kubernetes Security Specialist</p>
             <span>The Linux Foundation</span>
+            <em class="cert-verify"><i class="bi bi-patch-check"></i> verify</em>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/6a1d3651-499f-40f9-9d53-5f8fe2763588" target="_blank" rel="noopener">
+          <a class="cert-card" href="https://www.credly.com/badges/6a1d3651-499f-40f9-9d53-5f8fe2763588" data-badge-id="6a1d3651-499f-40f9-9d53-5f8fe2763588" target="_blank" rel="noopener">
             <img src="assets/img/certs/kcna.png" alt="KCNA badge" width="110" height="110" loading="lazy">
             <h3>KCNA</h3>
             <p>Kubernetes and Cloud Native Associate</p>
             <span>The Linux Foundation</span>
+            <em class="cert-verify"><i class="bi bi-patch-check"></i> verify</em>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/ec6ae83f-587a-4804-ae19-46d1581bfb8f" target="_blank" rel="noopener">
+          <a class="cert-card" href="https://www.credly.com/badges/ec6ae83f-587a-4804-ae19-46d1581bfb8f" data-badge-id="ec6ae83f-587a-4804-ae19-46d1581bfb8f" target="_blank" rel="noopener">
             <img src="assets/img/certs/kcsa.png" alt="KCSA badge" width="110" height="110" loading="lazy">
             <h3>KCSA</h3>
             <p>Kubernetes and Cloud Native Security Associate</p>
             <span>The Linux Foundation</span>
+            <em class="cert-verify"><i class="bi bi-patch-check"></i> verify</em>
           </a>
-          <a class="cert-card" href="https://www.credly.com/badges/fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" target="_blank" rel="noopener">
+          <a class="cert-card" href="https://www.credly.com/badges/fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" data-badge-id="fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" target="_blank" rel="noopener">
             <img src="assets/img/certs/mta.png" alt="MTA badge" width="110" height="110" loading="lazy">
             <h3>MTA</h3>
             <p>Database Fundamentals, Certified 2020</p>
             <span>Microsoft</span>
+            <em class="cert-verify"><i class="bi bi-patch-check"></i> verify</em>
           </a>
         </div>
 
-        <div class="cert-graph" data-aos="fade-up">
-          <h3 class="cert-graph-title">Certification path</h3>
-          <p class="cert-graph-intro">How the credentials build on each other, by technology and level.</p>
+        <details class="cert-graph">
+          <summary class="cert-graph-title"><i class="bi bi-chevron-right"></i> Certification path</summary>
           <div class="cert-graph-scroll" tabindex="0" role="region" aria-label="Certification dependency graph, scrollable">
-          <svg class="cert-graph-svg" viewBox="0 0 880 540" role="group" aria-labelledby="cg-title cg-desc">
+          <svg class="cert-graph-svg" viewBox="0 0 560 306" role="group" aria-labelledby="cg-title cg-desc">
             <title id="cg-title">Certification dependency graph</title>
-            <desc id="cg-desc">Kubernetes track: KCNA leads to CKA and CKAD, CKA is required for CKS, KCSA supports CKS, and holding all five earns Kubestronaut. MTA is an independent database certification.</desc>
+            <desc id="cg-desc">KCNA leads to CKA and CKAD. CKA and KCSA lead to CKS. All five Kubernetes certifications together earn Kubestronaut. MTA is an independent database certification.</desc>
             <defs>
-              <marker id="cg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="g-arrow"/></marker>
+              <marker id="cg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="g-arrow"/></marker>
             </defs>
-
-            <rect class="g-group" x="10" y="30" width="650" height="370" rx="16"/>
-            <text class="g-label" x="28" y="56">KUBERNETES TRACK</text>
-            <text class="g-level" x="30" y="90">ASSOCIATE</text>
-            <text class="g-level" x="255" y="90">PROFESSIONAL</text>
-            <text class="g-level" x="480" y="90">SPECIALIST</text>
-            <text class="g-level" x="720" y="146">ACHIEVEMENT</text>
-
-            <rect class="g-group" x="10" y="420" width="640" height="108" rx="16"/>
-            <text class="g-label" x="28" y="444">DATABASE TRACK</text>
-            <text class="g-note" x="200" y="489">independent, no prerequisites</text>
-
-            <path class="g-edge rec" d="M180 131H253" marker-end="url(#cg-arrow)"/>
-            <path class="g-edge rec" d="M180 131C218 131 218 236 253 236" marker-end="url(#cg-arrow)"/>
-            <path class="g-edge req" d="M405 131C445 131 445 191 478 191" marker-end="url(#cg-arrow)"/>
-            <path class="g-edge rec" d="M180 341C400 341 555 320 555 224" marker-end="url(#cg-arrow)"/>
-            <path class="g-edge req" d="M660 191H718" marker-end="url(#cg-arrow)"/>
-            <text class="g-note" x="689" y="180" text-anchor="middle">all 5</text>
-
-            <a href="https://www.credly.com/badges/6a1d3651-499f-40f9-9d53-5f8fe2763588" target="_blank" rel="noopener"><g class="g-node gn-ops" transform="translate(30 100)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">KCNA</text><text class="g-sub" x="18" y="46">Cloud Native Assoc.</text></g></a><a href="https://www.credly.com/badges/ec6ae83f-587a-4804-ae19-46d1581bfb8f" target="_blank" rel="noopener"><g class="g-node gn-sec" transform="translate(30 310)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">KCSA</text><text class="g-sub" x="18" y="46">Security Associate</text></g></a><a href="https://www.credly.com/badges/c3be5dd6-d35a-4a49-b223-f90481fa3a08" target="_blank" rel="noopener"><g class="g-node gn-ops" transform="translate(255 100)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">CKA</text><text class="g-sub" x="18" y="46">Administrator</text></g></a><a href="https://www.credly.com/badges/1146137f-45c3-4a36-b26b-7938b263770c" target="_blank" rel="noopener"><g class="g-node gn-dev" transform="translate(255 205)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">CKAD</text><text class="g-sub" x="18" y="46">App Developer</text></g></a><a href="https://www.credly.com/badges/df18a3f4-c8bd-4498-81a4-767437bf280f" target="_blank" rel="noopener"><g class="g-node gn-sec" transform="translate(480 160)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">CKS</text><text class="g-sub" x="18" y="46">Security Specialist</text></g></a><a href="https://www.credly.com/badges/360a79f1-45a9-4f99-8cc3-114e88eefd75" target="_blank" rel="noopener"><g class="g-node gn-top" transform="translate(720 160)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">Kubestronaut</text><text class="g-sub" x="18" y="46">All five held</text></g></a><a href="https://www.credly.com/badges/fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" target="_blank" rel="noopener"><g class="g-node gn-db" transform="translate(30 452)"><rect class="g-box" width="150" height="62" rx="10"/><rect class="g-stripe" width="5" height="62" rx="2.5"/><text class="g-code" x="18" y="27">MTA</text><text class="g-sub" x="18" y="46">DB Fundamentals</text></g></a>
+            <rect class="g-group" x="92" y="32" width="318" height="196" rx="12"/>
+            <text class="g-level" x="130" y="20" text-anchor="middle">ASSOCIATE</text>
+            <text class="g-level" x="250" y="20" text-anchor="middle">PROFESSIONAL</text>
+            <text class="g-level" x="370" y="20" text-anchor="middle">SPECIALIST</text>
+            <text class="g-level" x="500" y="20" text-anchor="middle">ACHIEVEMENT</text>
+            <rect class="g-dot dot-ops" x="8" y="57" width="7" height="7" rx="2"/><text class="g-row" x="21" y="63">OPERATIONS</text><rect class="g-dot dot-dev" x="8" y="121" width="7" height="7" rx="2"/><text class="g-row" x="21" y="127">DEVELOPMENT</text><rect class="g-dot dot-sec" x="8" y="185" width="7" height="7" rx="2"/><text class="g-row" x="21" y="191">SECURITY</text><rect class="g-dot dot-db" x="8" y="259" width="7" height="7" rx="2"/><text class="g-row" x="21" y="265">DATABASES</text>
+            <path class="g-edge" d="M156 60H226" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge" d="M190 60V124H226" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge" d="M276 60H370V164" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge" d="M156 188H344" marker-end="url(#cg-arrow)"/>
+            <path class="g-edge" d="M410 124H466" marker-end="url(#cg-arrow)"/>
+            <text class="g-note" x="438" y="117" text-anchor="middle">all 5</text>
+            <text class="g-note" x="170" y="266">independent</text>
+            <a href="https://www.credly.com/badges/6a1d3651-499f-40f9-9d53-5f8fe2763588" target="_blank" rel="noopener"><g class="g-node"><image href="assets/img/certs/kcna.png" x="108" y="38" width="44" height="44"/><text class="g-code" x="130" y="94" text-anchor="middle">KCNA</text></g></a><a href="https://www.credly.com/badges/c3be5dd6-d35a-4a49-b223-f90481fa3a08" target="_blank" rel="noopener"><g class="g-node"><image href="assets/img/certs/cka.png" x="228" y="38" width="44" height="44"/><text class="g-code" x="250" y="94" text-anchor="middle">CKA</text></g></a><a href="https://www.credly.com/badges/1146137f-45c3-4a36-b26b-7938b263770c" target="_blank" rel="noopener"><g class="g-node"><image href="assets/img/certs/ckad.png" x="228" y="102" width="44" height="44"/><text class="g-code" x="250" y="158" text-anchor="middle">CKAD</text></g></a><a href="https://www.credly.com/badges/ec6ae83f-587a-4804-ae19-46d1581bfb8f" target="_blank" rel="noopener"><g class="g-node"><image href="assets/img/certs/kcsa.png" x="108" y="166" width="44" height="44"/><text class="g-code" x="130" y="222" text-anchor="middle">KCSA</text></g></a><a href="https://www.credly.com/badges/df18a3f4-c8bd-4498-81a4-767437bf280f" target="_blank" rel="noopener"><g class="g-node"><image href="assets/img/certs/cks.png" x="348" y="166" width="44" height="44"/><text class="g-code" x="370" y="222" text-anchor="middle">CKS</text></g></a><a href="https://www.credly.com/badges/360a79f1-45a9-4f99-8cc3-114e88eefd75" target="_blank" rel="noopener"><g class="g-node"><image href="assets/img/certs/kubestronaut.png" x="469" y="93" width="62" height="62"/><text class="g-code" x="500" y="167" text-anchor="middle">Kubestronaut</text></g></a><a href="https://www.credly.com/badges/fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e" target="_blank" rel="noopener"><g class="g-node"><image href="assets/img/certs/mta.png" x="108" y="240" width="44" height="44"/><text class="g-code" x="130" y="296" text-anchor="middle">MTA</text></g></a>
           </svg>
           </div>
-          <ul class="cert-legend">
-            <li><span class="dot dot-ops"></span> Kubernetes operations</li>
-            <li><span class="dot dot-dev"></span> Application development</li>
-            <li><span class="dot dot-sec"></span> Security</li>
-            <li><span class="dot dot-db"></span> Databases</li>
-            <li><span class="line line-req"></span> required</li>
-            <li><span class="line line-rec"></span> recommended path</li>
-          </ul>
-        </div>
+          <p class="cert-graph-caption">An arrow means "leads to". Select a badge to verify it on Credly.</p>
+        </details>
       </div>
     </section><!-- /Certificates Section -->
     <hr>
@@ -645,6 +651,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Official Credly embed, loaded on demand -->
+  <dialog id="cert-dialog" class="cert-dialog" aria-label="Official Credly badge">
+    <div class="cert-dialog-frame"></div>
+    <div class="cert-dialog-actions">
+      <a class="btn-ops btn-ops-primary" id="cert-dialog-link" href="#" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Open on Credly</a>
+      <button type="button" class="btn-ops" id="cert-dialog-close">Close</button>
+    </div>
+  </dialog>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

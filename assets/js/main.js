@@ -501,3 +501,75 @@
   const y = document.getElementById('footer-year');
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+/**
+ * Certificates: selecting a card opens the official live Credly embed in a dialog,
+ * so the badge can be verified without leaving the page. Without JS (or <dialog>)
+ * the card is a plain link to the Credly page.
+ */
+(function () {
+  const dialog = document.getElementById('cert-dialog');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const frame = dialog.querySelector('.cert-dialog-frame');
+  const link = document.getElementById('cert-dialog-link');
+
+  document.querySelectorAll('.cert-card[data-badge-id]').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return; // let "open in new tab" work
+      e.preventDefault();
+      const id = card.dataset.badgeId;
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.credly.com/embedded_badge/' + id;
+      iframe.title = 'View my verified achievement on Credly.';
+      iframe.setAttribute('scrolling', 'no');
+      frame.replaceChildren(iframe);
+      link.href = card.href;
+      dialog.showModal();
+    });
+  });
+
+  function close() { dialog.close(); }
+  document.getElementById('cert-dialog-close').addEventListener('click', close);
+  dialog.addEventListener('click', e => { if (e.target === dialog) close(); }); // backdrop
+  dialog.addEventListener('close', () => frame.replaceChildren());
+})();
+
+/**
+ * Skills: the tool icons and the skill groups are linked.
+ * - Hover an icon: its group is outlined. Hover a group: its icons light up.
+ * - Click an icon: scroll to the group and pulse it, plus the matching chip.
+ */
+(function () {
+  const links = document.querySelectorAll('.tool-link[data-target]');
+  if (!links.length) return;
+  let litTimer;
+
+  links.forEach(btn => {
+    const card = document.getElementById(btn.dataset.target);
+    if (!card) return;
+    const chipText = btn.dataset.chip;
+    const chip = chipText && [...card.querySelectorAll('.chips li')].find(li => li.textContent.trim().startsWith(chipText));
+
+    const soft = on => card.classList.toggle('is-linked', on);
+    btn.addEventListener('mouseenter', () => soft(true));
+    btn.addEventListener('mouseleave', () => soft(false));
+    btn.addEventListener('focus', () => soft(true));
+    btn.addEventListener('blur', () => soft(false));
+
+    card.addEventListener('mouseenter', () => btn.parentElement.classList.add('is-linked'));
+    card.addEventListener('mouseleave', () => btn.parentElement.classList.remove('is-linked'));
+
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.skill-card.is-lit, .chips li.is-lit').forEach(el => el.classList.remove('is-lit'));
+      card.classList.add('is-lit');
+      if (chip) chip.classList.add('is-lit');
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      clearTimeout(litTimer);
+      litTimer = setTimeout(() => {
+        card.classList.remove('is-lit');
+        if (chip) chip.classList.remove('is-lit');
+      }, 2200);
+    });
+  });
+})();
+

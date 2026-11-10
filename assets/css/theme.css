@@ -559,14 +559,14 @@ main hr + .section {
 }
 
 .tool-icons li {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
   border-radius: 12px;
   border: 1px solid var(--border-color);
   background: var(--surface-color);
-  font-size: 22px;
+  font-size: 20px;
   color: var(--default-color);
   transition: 0.2s;
 }
@@ -577,12 +577,66 @@ main hr + .section {
   transform: translateY(-2px);
 }
 
+.tool-icons li {
+  padding: 0;
+  overflow: hidden;
+}
+
+.tool-link {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Brand icons from Simple Icons, drawn as a mask so they take the theme's text colour.
+   --si is set inline on each icon in index.html, but because it is used here the
+   browser resolves the url relative to this stylesheet (hence ../img/tools/). */
+.tool-link .si {
+  width: 22px;
+  height: 22px;
+  background-color: currentColor;
+  -webkit-mask: var(--si) center / contain no-repeat;
+  mask: var(--si) center / contain no-repeat;
+}
+
+.tool-icons li.is-linked {
+  color: var(--accent-color);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+/* a skill group picked out by its icon (hover = soft, click = pulse) */
+.skill-card.is-linked {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+.skill-card.is-lit {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 78%);
+}
+
+.chips li {
+  transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+}
+
+.chips li.is-lit {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
 .skill-card {
+  scroll-margin: 90px 0;
   padding: 18px;
   border: 1px solid var(--border-color);
   border-radius: 14px;
   background: var(--surface-color);
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.3s;
 }
 
 .skill-card:hover {
@@ -830,21 +884,96 @@ main hr + .section {
   color: var(--accent-color);
 }
 
-/* Certification dependency graph */
-.cert-graph {
-  margin-top: 44px;
-}
-
-.cert-graph-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 4px;
-}
-
-.cert-graph-intro {
-  margin: 0 0 18px;
+.cert-verify {
+  margin-top: 10px;
+  font: normal 11px var(--mono-font);
   color: var(--muted-color);
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cert-card:hover .cert-verify {
+  color: var(--accent-color);
+}
+
+/* Dialog holding the official Credly embed (always white: it is Credly's own widget) */
+.cert-dialog {
+  padding: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  background: var(--surface-color);
+  color: var(--default-color);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.cert-dialog::backdrop {
+  background: rgba(4, 8, 14, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.cert-dialog-frame {
+  width: 240px;
+  height: 432px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.cert-dialog-frame iframe {
+  width: 150px;
+  height: 270px;
+  border: 0;
+  transform: scale(1.6);
+  transform-origin: 0 0;
+}
+
+.cert-dialog-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* Certification dependency graph: rows are technologies, columns are levels */
+.cert-graph {
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+/* collapsed by default: a small toggle under the cards */
+.cert-graph-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 500 13px var(--mono-font);
+  color: var(--muted-color);
+  cursor: pointer;
+  list-style: none;
+  padding: 6px 2px;
+  border-radius: 6px;
+}
+
+.cert-graph-title::-webkit-details-marker {
+  display: none;
+}
+
+.cert-graph-title:hover {
+  color: var(--accent-color);
+}
+
+.cert-graph-title i {
+  font-size: 11px;
+  transition: transform 0.2s;
+}
+
+.cert-graph[open] .cert-graph-title i {
+  transform: rotate(90deg);
+}
+
+.cert-graph[open] .cert-graph-title {
+  margin-bottom: 6px;
 }
 
 .cert-graph-scroll {
@@ -852,144 +981,79 @@ main hr + .section {
   border: 1px solid var(--border-color);
   border-radius: 14px;
   background: var(--surface-color);
-  padding: 8px;
+  padding: 6px 8px;
 }
 
 .cert-graph-svg {
   display: block;
   width: 100%;
-  min-width: 720px;
-  max-width: 900px;
-  margin: 0 auto;
+  min-width: 480px;
   height: auto;
-}
-
-.cert-graph-svg a {
-  cursor: pointer;
 }
 
 .cert-graph-svg text {
   font-family: var(--mono-font);
 }
 
+.cert-graph-svg a {
+  cursor: pointer;
+}
+
+.g-node image {
+  transition: transform 0.2s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.g-node:hover image {
+  transform: scale(1.08);
+}
+
 .g-group {
   fill: none;
   stroke: var(--border-color);
-  stroke-width: 1.5;
-  stroke-dasharray: 5 5;
+  stroke-width: 1.2;
 }
 
-.g-label {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  fill: var(--muted-color);
-}
-
-.g-level {
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
+.g-level,
+.g-row {
+  font-size: 8.5px;
+  letter-spacing: 0.08em;
   fill: var(--muted-color);
 }
 
 .g-note {
-  font-size: 11px;
+  font-size: 9px;
   fill: var(--muted-color);
 }
 
+.g-code {
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--heading-color);
+}
+
+/* every arrow looks the same */
 .g-edge {
   fill: none;
   stroke: var(--muted-color);
-  stroke-width: 1.8;
-}
-
-.g-edge.rec {
-  stroke-dasharray: 5 4;
-  opacity: 0.8;
-}
-
-.g-edge.req {
-  stroke: var(--heading-color);
-  stroke-width: 2.2;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
 }
 
 .g-arrow {
   fill: var(--muted-color);
 }
 
-.g-box {
-  fill: var(--surface-raised);
-  stroke: var(--border-color);
-  stroke-width: 1.2;
-  transition: stroke 0.2s;
-}
+.g-dot.dot-ops { fill: var(--g-ops); }
+.g-dot.dot-dev { fill: var(--g-dev); }
+.g-dot.dot-sec { fill: var(--g-sec); }
+.g-dot.dot-db { fill: var(--g-db); }
 
-.g-node:hover .g-box {
-  stroke: var(--node-color);
-}
-
-.g-code {
-  font-size: 15px;
-  font-weight: 700;
-  fill: var(--heading-color);
-}
-
-.g-sub {
-  font-size: 11px;
-  fill: var(--default-color);
-}
-
-.g-stripe {
-  fill: var(--node-color);
-}
-
-.gn-ops { --node-color: var(--g-ops); }
-.gn-dev { --node-color: var(--g-dev); }
-.gn-sec { --node-color: var(--g-sec); }
-.gn-db { --node-color: var(--g-db); }
-.gn-top { --node-color: var(--accent-color); }
-
-.gn-top .g-box {
-  stroke: var(--accent-color);
-  stroke-width: 1.8;
-  fill: color-mix(in srgb, var(--accent-color), var(--surface-raised) 88%);
-}
-
-.cert-legend {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  padding: 0;
-  margin: 14px 0 0;
-  font: 12px var(--mono-font);
+.cert-graph-caption {
+  margin: 10px 0 0;
+  font: 11.5px var(--mono-font);
   color: var(--muted-color);
-}
-
-.cert-legend li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cert-legend .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-}
-
-.dot-ops { background: var(--g-ops); }
-.dot-dev { background: var(--g-dev); }
-.dot-sec { background: var(--g-sec); }
-.dot-db { background: var(--g-db); }
-
-.cert-legend .line {
-  width: 24px;
-  height: 0;
-  border-top: 2px solid var(--heading-color);
-}
-
-.cert-legend .line-rec {
-  border-top: 2px dashed var(--muted-color);
 }
 
 /*--------------------------------------------------------------
