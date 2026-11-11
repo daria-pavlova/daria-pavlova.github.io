@@ -4,14 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Security policy: only this site's own scripts may run; outside content is limited to the hosts listed.
+       GitHub Pages cannot send response headers, so the policy lives here. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn-images-1.medium.com; frame-src https://www.credly.com https://badge.uptimerobot.com; connect-src 'self' https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#0a0e14">
   <meta name="color-scheme" content="dark light">
-  <script>
-    // Apply the saved theme before first paint so the page doesn't flash dark.
-    try {
-      if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
-    } catch (e) {}
-  </script>
+  <script src="assets/js/theme-init.js"></script>
   <title>Daria Pavlova Portfolio</title>
   <meta content="Daria Pavlova — DevOps Engineer specializing in CI/CD, Kubernetes, AWS/GCP cloud infrastructure, and automation." name="description">
   <meta content="DevOps, Kubernetes, AWS, GCP, CI/CD, Terraform, Docker, Site Reliability Engineering" name="keywords">
@@ -27,15 +26,14 @@
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/theme.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -178,9 +176,9 @@
     <div class="social-links text-center">
       <!-- <a href="https://www.facebook.com/pavlova.daha/" class="facebook"><i class="bi bi-facebook"></i></a> -->
       <!-- <a href="https://www.instagram.com/daria_brorisovna/" class="instagram"><i class="bi bi-instagram"></i></a> -->
-      <a href="https://github.com/daria-pavlova/" class="github" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/pavlova-b-daria/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="https://medium.com/@dariaops" class="medium" target="_blank"><i class="bi bi-medium"></i></a>
+      <a href="https://github.com/daria-pavlova/" class="github" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/pavlova-b-daria/" class="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@dariaops" class="medium" target="_blank" rel="noopener"><i class="bi bi-medium"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -462,11 +460,11 @@
               </div>
               <div class="card-footer">
                 
-                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="text-dark" target="_blank">
+                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="text-dark" target="_blank" rel="noopener">
                   <i class="fab fa-github-square fa-2x"></i>
                 </a>
                 
-                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="btn btn-dark float-right" target="_blank">View project</a>
+                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="btn btn-dark float-right" target="_blank" rel="noopener">View project</a>
               </div>
             </div>
           </div>
@@ -484,10 +482,10 @@
                 </p>
               </div>
               <div class="card-footer">
-                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank">
+                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank" rel="noopener">
                   <i class="fab fa-github-square fa-2x"></i>
                 </a>
-                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank">View GitHub</a>
+                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank" rel="noopener">View GitHub</a>
               </div>
             </div>
           </div>
@@ -505,10 +503,10 @@
                 </p>
               </div>
               <div class="card-footer">
-                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank">
+                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank" rel="noopener">
                   <i class="fab fa-github-square fa-2x"></i>
                 </a>
-                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank">View GitHub</a>
+                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank" rel="noopener">View GitHub</a>
               </div>
             </div>
           </div>
@@ -616,6 +614,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <form action="https://formspree.io/f/xljjzwgz" method="POST" class="feedback-form">
+          <input type="text" name="_gotcha" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="row gy-4">
             <div class="col-md-6">
               <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -675,15 +674,8 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>

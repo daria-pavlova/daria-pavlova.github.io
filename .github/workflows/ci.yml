@@ -1,0 +1,65 @@
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # On Dependabot pull requests: refresh assets/vendor from the updated packages and
+  # commit the result to the PR, so merging it really updates the files the site serves.
+  sync-vendor:
+    if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run vendor
+      - name: Commit refreshed vendor files
+        run: |
+          if [ -n "$(git status --porcelain assets/vendor)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/vendor
+            git commit -m "Refresh assets/vendor for updated packages"
+            git push
+          fi
+
+  check:
+    needs: sync-vendor
+    # run even when sync-vendor was skipped (every non-Dependabot run)
+    if: ${{ !cancelled() && (needs.sync-vendor.result == 'success' || needs.sync-vendor.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Known vulnerabilities in the libraries
+        run: npm audit --omit=dev --audit-level=moderate
+      - name: assets/vendor matches package-lock.json
+        run: |
+          npm run vendor
+          git diff --exit-code -- assets/vendor
+          test -z "$(git status --porcelain assets/vendor)"
+      - name: Pages reference only files that exist and keep the security rules
+        run: npm run check

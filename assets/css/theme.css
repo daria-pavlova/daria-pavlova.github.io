@@ -1113,6 +1113,11 @@ main hr + .section {
   color: var(--muted-color);
 }
 
+/* spam trap: hidden from people, visible to bots */
+.form-trap {
+  display: none !important;
+}
+
 .feedback-form .col-md-12.text-center {
   text-align: left !important;
 }

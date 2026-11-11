@@ -5,17 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; object-src 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#0a0e14">
   <title>404 · This station doesn't exist</title>
   <link href="/assets/img/apple-icon-60x60.png" rel="icon">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script>
-    try {
-      if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
-    } catch (e) {}
-  </script>
+  <script src="/assets/js/theme-init.js"></script>
   <style>
     /* Self-contained: this page is served for any missing URL, at any depth. */
     :root {
@@ -236,10 +234,7 @@ HTTP/2 404 <b>station not found</b></pre>
     <a class="btn" href="/">Return to base</a>
   </main>
 
-  <script>
-    // Show the path that was requested (textContent, so nothing in it is treated as markup).
-    document.getElementById('lost-path').textContent = location.pathname.slice(0, 60);
-  </script>
+  <script src="/assets/js/404.js"></script>
 </body>
 
 </html>
