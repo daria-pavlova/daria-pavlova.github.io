@@ -1196,8 +1196,68 @@ main hr + .section {
   color: var(--contrast-color);
 }
 
+/* Preloader: the DevOps infinity loop, with a runner travelling round it */
 #preloader {
   background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+#preloader:before {
+  display: none;
+}
+
+.preloader-loop {
+  width: 132px;
+  height: 66px;
+  overflow: visible;
+}
+
+.preloader-loop path {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.loop-track {
+  stroke: var(--border-color);
+}
+
+.loop-runner {
+  stroke: var(--accent-color);
+  stroke-dasharray: 28 72;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent-color), transparent 40%));
+  animation: loop-run 1.6s linear infinite;
+}
+
+@keyframes loop-run {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+.preloader-text {
+  margin: 0;
+  font: 500 13px var(--mono-font);
+  color: var(--muted-color);
+}
+
+.preloader-text span {
+  color: var(--accent-color);
+}
+
+.preloader-text i {
+  font-style: normal;
+  animation: cursor-blink 1.1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loop-runner,
+  .preloader-text i {
+    animation: none;
+  }
 }
 
 @media (max-width: 575px) {
