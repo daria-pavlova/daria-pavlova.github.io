@@ -1,0 +1,16 @@
+{
+  "name": "daria-pavlova-portfolio",
+  "private": true,
+  "description": "Front-end libraries for the portfolio site. Dependabot watches this file; `npm run vendor` copies the files the site uses into assets/vendor.",
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "check": "node scripts/check-site.mjs"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.15.4",
+    "aos": "3.0.0-beta.6",
+    "bootstrap": "5.3.3",
+    "bootstrap-icons": "1.11.3",
+    "typed.js": "2.1.0"
+  }
+}

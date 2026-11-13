@@ -4,14 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Security policy: only this site's own scripts may run; outside content is limited to the hosts listed.
+       GitHub Pages cannot send response headers, so the policy lives here. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn-images-1.medium.com; frame-src https://www.credly.com https://badge.uptimerobot.com; connect-src 'self' https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#0a0e14">
   <meta name="color-scheme" content="dark light">
-  <script>
-    // Apply the saved theme before first paint so the page doesn't flash dark.
-    try {
-      if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
-    } catch (e) {}
-  </script>
+  <script src="assets/js/theme-init.js"></script>
   <title>Daria Pavlova Portfolio</title>
   <meta content="Daria Pavlova — DevOps Engineer specializing in CI/CD, Kubernetes, AWS/GCP cloud infrastructure, and automation." name="description">
   <meta content="DevOps, Kubernetes, AWS, GCP, CI/CD, Terraform, Docker, Site Reliability Engineering" name="keywords">
@@ -27,15 +26,14 @@
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/theme.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -178,9 +176,9 @@
     <div class="social-links text-center">
       <!-- <a href="https://www.facebook.com/pavlova.daha/" class="facebook"><i class="bi bi-facebook"></i></a> -->
       <!-- <a href="https://www.instagram.com/daria_brorisovna/" class="instagram"><i class="bi bi-instagram"></i></a> -->
-      <a href="https://github.com/daria-pavlova/" class="github" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/pavlova-b-daria/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="https://medium.com/@dariaops" class="medium" target="_blank"><i class="bi bi-medium"></i></a>
+      <a href="https://github.com/daria-pavlova/" class="github" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/pavlova-b-daria/" class="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@dariaops" class="medium" target="_blank" rel="noopener"><i class="bi bi-medium"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -252,7 +250,7 @@
           <div class="col-md-6 col-xxl-4">
             <div class="skill-card h-100" id="skill-aws">
               <h3><i class="bi bi-cloud"></i> AWS</h3>
-              <ul class="chips"><li>EC2</li><li>ELB</li><li>Route53</li><li>S3</li><li>SNS</li><li>RDS</li><li>IAM</li><li>VPC</li><li>EKS</li><li>Kong</li><li>Auto Scaling</li></ul>
+              <ul class="chips"><li>EC2</li><li>ELB</li><li>Route53</li><li>S3</li><li>SNS</li><li>RDS</li><li>IAM</li><li>VPC</li><li>EKS</li><li>Auto Scaling</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
@@ -294,7 +292,7 @@
           <div class="col-md-6 col-xxl-4">
             <div class="skill-card h-100" id="skill-orchestration">
               <h3><i class="bi bi-diagram-3"></i> Orchestration</h3>
-              <ul class="chips"><li>Kubernetes</li><li>minikube</li><li>Helm</li><li>K9s</li></ul>
+              <ul class="chips"><li>Kubernetes</li><li>minikube</li><li>Helm</li><li>K9s</li><li>Istio</li></ul>
             </div>
           </div>
           <div class="col-md-6 col-xxl-4">
@@ -330,7 +328,7 @@
           <div class="col-md-6 col-xxl-4">
             <div class="skill-card h-100" id="skill-networking">
               <h3><i class="bi bi-hdd-network"></i> Networking</h3>
-              <ul class="chips"><li>HTTP/HTTPS</li><li>FTP</li><li>NFS</li><li>SMB</li><li>SNMP</li><li>SSH</li><li>DNS</li><li>TCP/IP</li><li>DHCP</li></ul>
+              <ul class="chips"><li>HTTP/HTTPS</li><li>FTP</li><li>NFS</li><li>SMB</li><li>SNMP</li><li>SSH</li><li>DNS</li><li>TCP/IP</li><li>DHCP</li><li>HAProxy</li><li>Kong</li></ul>
             </div>
           </div>
         </div>
@@ -352,12 +350,12 @@
                 <h5>09/2022 to 04/2024</h5>
                 <p><em>Rakuten Payment, Tokyo, Japan</em></p>
                 <ul>
-                  <li>Orchestrated and optimized CI/CD processes using Kubernetes and Jenkins, significantly enhancing deployment speed and reliability.</li>
-                  <li>Authored new scripting stages for Jenkins, boosting automation efficiency.</li>
-                  <li>Deployed applications to clusters and managed infrastructure resources with AWS services (EC2, S3, RDS, and VPC),
-                    ensuring high availability and scalability.</li>
-                  <li>Pioneered multitenancy implementation and GitOps approach with ArgoCD and Keycloak, substantially improving access management and control.</li>
-                  <li>Integrated and fine-tuned monitoring tools such as Prometheus, Grafana, Datadog, and the ELK stack (Elasticsearch, Logstash, Kibana), optimizing performance and enabling timely problem resolution.</li>
+                  <li>Engineered robust GitLab CI/CD pipelines for multiple applications, significantly reducing deployment times and increasing reliability.</li>
+                  <li>Implemented blue/green and canary deployment strategies using Istio and HAProxy, enhancing system uptime and minimizing deployment risks.</li>
+                  <li>Developed a comprehensive Proof of Concept (POC) for Kong deployment on-premises with Ansible and GCP, providing a scalable solution for API management and improving cost efficiency.</li>
+                  <li>Automated critical components of GCP infrastructure and monitoring with Terraform, leading to an increase in operational efficiency and resource management.</li>
+                  <li>Scripted advanced RBAC and IAM role management for GCP GKE, improving security and access control across the organization.</li>
+                  <li>Authored extensive documentation on infrastructure, manual testing, step-by-step reproduction processes, and pipelines, ensuring knowledge transfer and facilitating team collaboration.</li>
                 </ul>
               </div><!-- End Resume Item -->
   
@@ -462,11 +460,11 @@
               </div>
               <div class="card-footer">
                 
-                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="text-dark" target="_blank">
+                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="text-dark" target="_blank" rel="noopener">
                   <i class="fab fa-github-square fa-2x"></i>
                 </a>
                 
-                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="btn btn-dark float-right" target="_blank">View project</a>
+                <a href="https://github.com/daria-pavlova/AWS-Terraform-Ansible-Nginx-Setup" class="btn btn-dark float-right" target="_blank" rel="noopener">View project</a>
               </div>
             </div>
           </div>
@@ -484,10 +482,10 @@
                 </p>
               </div>
               <div class="card-footer">
-                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank">
+                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank" rel="noopener">
                   <i class="fab fa-github-square fa-2x"></i>
                 </a>
-                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank">View GitHub</a>
+                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank" rel="noopener">View GitHub</a>
               </div>
             </div>
           </div>
@@ -505,10 +503,10 @@
                 </p>
               </div>
               <div class="card-footer">
-                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank">
+                <a href="https://github.com/daria-pavlova/" class="text-dark" target="_blank" rel="noopener">
                   <i class="fab fa-github-square fa-2x"></i>
                 </a>
-                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank">View GitHub</a>
+                <a href="https://github.com/daria-pavlova/" class="btn btn-dark float-right" target="_blank" rel="noopener">View GitHub</a>
               </div>
             </div>
           </div>
@@ -616,6 +614,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <form action="https://formspree.io/f/xljjzwgz" method="POST" class="feedback-form">
+          <input type="text" name="_gotcha" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="row gy-4">
             <div class="col-md-6">
               <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -675,15 +674,8 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
