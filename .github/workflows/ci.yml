@@ -61,5 +61,7 @@ jobs:
           npm run vendor
           git diff --exit-code -- assets/vendor
           test -z "$(git status --porcelain assets/vendor)"
+      - name: index.html matches data/cv.yml
+        run: npm run build:check
       - name: Pages reference only files that exist and keep the security rules
         run: npm run check
