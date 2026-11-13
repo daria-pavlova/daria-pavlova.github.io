@@ -1,0 +1,215 @@
+# Content for the CV sections of index.html.
+# Edit this file, then run:  npm run build
+# That rewrites the marked sections of index.html (between <!-- cv:NAME:start --> and <!-- cv:NAME:end -->).
+# Plain text only: & and < are escaped automatically; do not write HTML tags here.
+
+experience:
+  - title: DevOps Engineer
+    dates: 09/2022 to 04/2024
+    company: Rakuten Payment, Tokyo, Japan
+    bullets:
+      - Engineered robust GitLab CI/CD pipelines for multiple applications, significantly reducing deployment times and increasing reliability.
+      - Implemented blue/green and canary deployment strategies using Istio and HAProxy, enhancing system uptime and minimizing deployment risks.
+      - Developed a comprehensive Proof of Concept (POC) for Kong deployment on-premises with Ansible and GCP, providing a scalable solution for API management and improving cost efficiency.
+      - Automated critical components of GCP infrastructure and monitoring with Terraform, leading to an increase in operational efficiency and resource management.
+      - Scripted advanced RBAC and IAM role management for GCP GKE, improving security and access control across the organization.
+      - Authored extensive documentation on infrastructure, manual testing, step-by-step reproduction processes, and pipelines, ensuring knowledge transfer and facilitating team collaboration.
+  - title: DevOps Engineer
+    dates: 05/2021 to 07/2022
+    company: Epam Systems, Kharkiv, Ukraine
+    bullets:
+      - Orchestrated and optimized CI/CD processes using Kubernetes and Jenkins, significantly enhancing deployment speed and reliability.
+      - Authored new scripting stages for Jenkins, boosting automation efficiency.
+      - Deployed applications to clusters and managed infrastructure resources with AWS services (EC2, S3, RDS, and VPC), ensuring high availability and scalability.
+      - Pioneered multitenancy implementation and GitOps approach with ArgoCD and Keycloak, substantially improving access management and control.
+      - Integrated and fine-tuned monitoring tools such as Prometheus, Grafana, Datadog, and the ELK stack (Elasticsearch, Logstash, Kibana), optimizing performance and enabling timely problem resolution.
+  - title: Technical Operation Engineer
+    dates: 11/2020 to 05/2021
+    company: Namecheap, Kharkiv, Ukraine
+    bullets:
+      - Provided technical expertise and support to internal teams and clients on email-related matters, including configuration, troubleshooting, and best practices.
+      - Executed email restoration from backups for users, ensuring minimal downtime and data integrity.
+      - Optimized investigation strategies and enhanced debugging processes on CentOS/Ubuntu servers, significantly reducing resolution times.
+      - Automated routine tasks using scripting languages (Bash, Python), resulting in increased productivity and consistency.
+  - title: SRE (Site Reliability Engineer)
+    dates: 07/2019 to 08/2020
+    company: Team International, Kharkiv, Ukraine
+    bullets:
+      - Achieved a high SLA with application issues, significantly improving system reliability and customer satisfaction.
+      - Enhanced security posture by managing SSH keys for HaProxy servers, reducing unauthorized access incidents.
+      - Maintained a clean and efficient infrastructure through monthly inspections and detailed reports, ensuring optimal performance, compliance, and cost improvement.
+      - Deployed and managed Azure resources to support application infrastructure, ensuring scalability and high availability.
+education:
+  - title: MSc in Telecommunication systems and network
+    dates: 2016 - 2018
+    school: National Technical University "Kharkiv Polytechnic Institute", Kharkiv, Ukraine
+    description: Exploring communication technologies, learning the OSI model, and mastering network protocols. Cisco courses provided practical experience in network configuration, and programming for protocols enhanced understanding of data communication.
+  - title: BSc in Telecommunication systems and network
+    dates: 2012 - 2016
+    school: National Technical University "Kharkiv Polytechnic Institute", Kharkiv, Ukraine
+    description: Advanced network architectures, emphasizing the OSI model, IoT, and 5G technologies. Research included optimizing network performance and security, with additional expertise gained through Cisco certifications and protocol programming.
+skills:
+  - id: aws
+    icon: bi bi-cloud
+    title: AWS
+    chips:
+      - EC2
+      - ELB
+      - Route53
+      - S3
+      - SNS
+      - RDS
+      - IAM
+      - VPC
+      - EKS
+      - Auto Scaling
+  - id: gcp
+    icon: bi bi-cloud
+    title: GCP
+    chips:
+      - GKE
+      - Cloud IAM
+      - Cloud Monitoring
+      - Cloud Shell
+      - Compute Engine
+      - Cloud Storage
+      - Cloud Load Balancer
+      - Cloud SQL
+  - id: azure
+    icon: bi bi-cloud
+    title: Azure
+    chips:
+      - VMs
+      - Disk Storage
+      - VM Backup
+      - Virtual Networks
+      - Load Balancers
+      - Monitor
+      - Blobs
+      - Storage Accounts
+  - id: cicd
+    icon: bi bi-infinity
+    title: CI/CD
+    chips:
+      - Git
+      - Jenkins
+      - GitLab CI
+      - GitHub Actions
+  - id: gitops
+    icon: bi bi-arrow-repeat
+    title: GitOps & delivery
+    chips:
+      - Argo CD
+      - Argo Rollouts
+  - id: artifacts
+    icon: bi bi-archive
+    title: Artifacts & scanning
+    chips:
+      - JFrog Artifactory
+      - JFrog Xray
+      - Wiz
+      - SBOM
+  - id: containers
+    icon: bi bi-box-seam
+    title: Containers
+    chips:
+      - Docker
+      - Docker-compose
+  - id: orchestration
+    icon: bi bi-diagram-3
+    title: Orchestration
+    chips:
+      - Kubernetes
+      - minikube
+      - Helm
+      - K9s
+      - Istio
+  - id: config
+    icon: bi bi-file-earmark-code
+    title: Configuration management
+    chips:
+      - Terraform
+      - Ansible
+      - Puppet
+  - id: monitoring
+    icon: bi bi-activity
+    title: Monitoring & logging
+    chips:
+      - ELK stack
+      - CloudWatch
+      - Google Cloud Operations
+      - Prometheus
+      - Grafana
+      - Datadog
+  - id: scripting
+    icon: bi bi-terminal
+    title: Scripting
+    chips:
+      - Bash
+      - Python
+  - id: platforms
+    icon: bi bi-hdd-stack
+    title: Platforms
+    chips:
+      - Linux (Red Hat, Ubuntu, CentOS)
+      - Windows Server
+  - id: databases
+    icon: bi bi-database
+    title: Databases
+    chips:
+      - MySQL
+      - Redis
+      - PostgreSQL
+      - Microsoft SQL Server
+  - id: networking
+    icon: bi bi-hdd-network
+    title: Networking
+    chips:
+      - HTTP/HTTPS
+      - FTP
+      - NFS
+      - SMB
+      - SNMP
+      - SSH
+      - DNS
+      - TCP/IP
+      - DHCP
+      - HAProxy
+      - Kong
+certificates:
+  - name: Kubestronaut
+    description: All five CNCF Kubernetes certifications held together
+    issuer: The Linux Foundation
+    badge: 360a79f1-45a9-4f99-8cc3-114e88eefd75
+    image: kubestronaut
+    featured: true
+  - name: CKA
+    description: Certified Kubernetes Administrator
+    issuer: The Linux Foundation
+    badge: c3be5dd6-d35a-4a49-b223-f90481fa3a08
+    image: cka
+  - name: CKAD
+    description: Certified Kubernetes Application Developer
+    issuer: The Linux Foundation
+    badge: 1146137f-45c3-4a36-b26b-7938b263770c
+    image: ckad
+  - name: CKS
+    description: Certified Kubernetes Security Specialist
+    issuer: The Linux Foundation
+    badge: df18a3f4-c8bd-4498-81a4-767437bf280f
+    image: cks
+  - name: KCNA
+    description: Kubernetes and Cloud Native Associate
+    issuer: The Linux Foundation
+    badge: 6a1d3651-499f-40f9-9d53-5f8fe2763588
+    image: kcna
+  - name: KCSA
+    description: Kubernetes and Cloud Native Security Associate
+    issuer: The Linux Foundation
+    badge: ec6ae83f-587a-4804-ae19-46d1581bfb8f
+    image: kcsa
+  - name: MTA
+    description: Database Fundamentals, Certified 2020
+    issuer: Microsoft
+    badge: fdaf50a2-3e3b-448a-b7a4-756e4b1daa9e
+    image: mta
